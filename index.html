@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADN Engenharia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Estilo geral */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #89c8e8;
+      background-color: #1C1C1C; /* Fundo do corpo em cinza escuro */
+    }
+
+    header {
+      background: #000; /* Fundo preto no cabeçalho */
+      color: #89c8e8; /* Letras azul claro */
+      padding: 20px 10%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #333; /* Linha sutil para separação */
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo img {
+      height: 100px; /* Logo maior */
+      margin-right: 35px;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    header nav ul li a {
+      color: #89c8e8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px 10%;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h1, h2 {
+      color: #89c8e8;
+    }
+
+    p, ul {
+      color: #89c8e8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1da851;
+    }
+
+    .whatsapp-btn i {
+      font-size: 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #000; /* Fundo preto no rodapé */
+      color: #89c8e8; /* Texto azul claro */
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="ADN_LOGO.png" alt="Logo ADN Engenharia">
+      <h1>ADN Engenharia</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre Nós</h2>
+      <p>Bem-vindo à ADN Engenharia! Oferecemos serviços de construção, elaboração de projetos, reformas, pintura, hidráulica, telhados e piscinas. Nosso compromisso é entregar qualidade e inovação em cada projeto.</p>
+    </section>
+
+    <section id="servicos">
+      <h2>Nossos Serviços</h2>
+      <ul>
+        <li>Construção e Reformas</li>
+        <li>Elaboração de Projetos</li>
+        <li>Pintura e Acabamento</li>
+        <li>Instalações Hidráulicas</li>
+        <li>Reparos em Telhados e Calhas</li>
+        <li>Construção de Piscinas</li>
+      </ul>
+    </section>
+
+    <section id="contato">
+      <h2>Fale Conosco</h2>
+      <p>Entre em contato pelo WhatsApp clicando no ícone abaixo ou ligue para o número: <span id="whatsapp-number"></span></p>
+      <button class="whatsapp-btn" onclick="redirectToWhatsApp()">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 ADN Engenharia. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Definição do número do WhatsApp
+    const whatsappNumber = "31933041390";
+    const whatsappMessage = "Olá, gostaria de saber mais sobre os serviços da ADN Engenharia!";
+
+    // Exibir o número na página
+    document.getElementById("whatsapp-number").textContent = `(${whatsappNumber.slice(0, 2)}) ${whatsappNumber.slice(2, 7)}-${whatsappNumber.slice(7)}`;
+
+    // Função para redirecionar ao WhatsApp
+    function redirectToWhatsApp() {
+      const url = `https://wa.me/55${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
